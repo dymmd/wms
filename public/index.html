@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html style="background: #f5f5f5">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="format-detection" content="telephone=yes"/>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+<!--    <title>B2BShop</title>-->
+    <link rel="stylesheet" type="text/css" href="css/res.css"/>
+    <!--<script type="text/javascript" src="./font.js"></script>-->
+  </head>
+  <body style="background: #f5f5f5">
+    <!--<noscript>-->
+      <!--&lt;!&ndash;<strong>We're sorry but B2BShop doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>&ndash;&gt;-->
+    <!--</noscript>-->
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+<script type="text/javascript">
+    localStorage.setItem('city',null)
+    function getLocation()
+    {
+        localStorage.setItem('city',null)
+        //用gps定位，电脑无法获取当前经纬度，写死的测试经纬度
+        localStorage.setItem('longitude',116.3953399658)
+        localStorage.setItem('latitude',39.9073660631)
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+    }
+    function showPosition(position)
+    {
+        if(position.coords.longitude&&position.coords.latitude){
+            localStorage.setItem('longitude',position.coords.longitude)
+            localStorage.setItem('latitude',position.coords.latitude)
+        }
+
+    }
+    //getLocation();
+    /**
+     * 在微信上隐藏地址 方法1隐藏
+     */
+     function hideaddress (){
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else onBridgeReady();
+    }
+    var onBridgeReady = function (){
+    WeixinJSBridge.call('hideOptionMenu');
+    }
+    hideaddress();
+</script>
+  <!--Vconsole仅作为调试用  发布时候记得注掉-->
+ <!--  <script src='./vconsole.min.js'></script>
+  <script>
+      var vconsole = new VConsole();
+  </script>-->
+</html>

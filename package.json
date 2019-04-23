@@ -1,0 +1,45 @@
+{
+  "name": "B2BShop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "better-scroll": "^1.12.1",
+    "cropperjs": "^1.4.1",
+    "dns": "^0.2.2",
+    "element-ui": "^2.4.1",
+    "fetch": "^1.1.0",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "js-md5": "^0.7.3",
+    "mint-ui": "^2.2.13",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "vant": "^1.1.8",
+    "vue": "^2.5.16",
+    "vue-croppa": "^1.3.7",
+    "vue-lazyload": "^1.2.6",
+    "vue-qriously": "^1.1.1",
+    "vue-router": "^3.0.1",
+    "vue-touch": "^2.0.0-beta.4",
+    "vuex": "^3.0.1",
+    "weixin-js-sdk": "^1.3.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
